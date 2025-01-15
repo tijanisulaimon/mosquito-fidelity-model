@@ -19,5 +19,53 @@ The interaction between vector host preference and host availability on vector b
 This papaer has been published in ...
 
 ## Contents
-- `scripts/` - Scripts for running the model. 
-- `figures/` - Plots and tables generated for the paper.
+- `scripts/`: contains all code for analyzing the model. Brief descriptions of each file:
+
+  - **model.R**: Core model functions, \(R_0\) function, and likelihood function for parameter estimation
+
+  - **parameters.R**: Defines all model parameters
+
+  - **r0LHSsensitivity_JSL.R**: performs global sensitivity analysis of \(R_0\) using Latin Hypercube Sampling (LHS)
+
+  - **simulate.R**: Runs simulations, explores \(R_0\) values, and includes mosquito feeding experiments
+- `figures/` - Plots and tables generated for the paper
+
+## Getting Started
+To run the model:  
+1. Open `simulate.R`.  
+2. Source the model functions from `model.R`
+3. Ensure all required libraries are installed
+
+```R
+sessionInfo()
+R version 4.4.2 (2024-10-31)
+Platform: x86_64-apple-darwin20
+Running under: macOS Sequoia 15.2
+
+Matrix products: default
+BLAS:   /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib 
+LAPACK: /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.0
+
+locale:
+[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+attached base packages:
+[1] parallel  grid      stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+ [1] deSolve_1.40     leaflet_2.2.2    kableExtra_1.4.0 lubridate_1.9.3  forcats_1.0.0   
+ [6] stringr_1.5.1    dplyr_1.1.4      purrr_1.0.2      readr_2.1.5      tidyr_1.3.1     
+[11] tibble_3.2.1     ggplot2_3.5.1    tidyverse_2.0.0  here_1.0.1       lhs_1.2.0       
+[16] gridExtra_2.3    reshape_0.8.9   
+
+loaded via a namespace (and not attached):
+ [1] utf8_1.2.4         generics_0.1.3     xml2_1.3.6         stringi_1.8.4      hms_1.1.3         
+ [6] digest_0.6.37      magrittr_2.0.3     RColorBrewer_1.1-3 evaluate_1.0.1     timechange_0.3.0  
+[11] fastmap_1.2.0      rprojroot_2.0.4    plyr_1.8.9         backports_1.5.0    crosstalk_1.2.1   
+[16] viridisLite_0.4.2  scales_1.3.0       cli_3.6.3          rlang_1.1.4        munsell_0.5.1     
+[21] withr_3.0.2        tools_4.4.2        reshape2_1.4.4     tzdb_0.4.0         colorspace_2.1-1  
+[26] broom_1.0.7        vctrs_0.6.5        R6_2.5.1           lifecycle_1.0.4    htmlwidgets_1.6.4 
+[31] pkgconfig_2.0.3    pillar_1.10.0      gtable_0.3.6       glue_1.8.0         Rcpp_1.0.13-1     
+[36] systemfonts_1.1.0  xfun_0.49          tidyselect_1.2.1   rstudioapi_0.17.1  knitr_1.49        
+[41] xtable_1.8-4       farver_2.1.2       htmltools_0.5.8.1  labeling_0.4.3     rmarkdown_2.29    
+[46] svglite_2.1.3      compiler_4.4.2    
